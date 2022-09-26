@@ -37,6 +37,7 @@ import {
   AccordionItemHeading,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import Footer from "../components/footer";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -456,6 +457,7 @@ const Location: Template<TemplateRenderProps> = ({
               ))}
             </Accordion>
           </div>
+          <Footer />
         </>
       ) : (
         <Locations_mcD document={document} />

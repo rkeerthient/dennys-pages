@@ -16,6 +16,7 @@ import List from "./list";
 import StaticMap from "./static-map";
 import parsePhoneNumber from "libphonenumber-js";
 import Banner from "./banner";
+import Footer from "./footer";
 
 const faqOptions = [
   {
@@ -217,7 +218,15 @@ const Locations_mcD = ({ document }: any) => {
         className="section p-4 space-y-12 promos"
         style={{ background: "#f5f3eb", marginBottom: "0px !important" }}
       >
-        <h1>PROMOS</h1>
+        <h1
+          style={{
+            width: "fit-content",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          PROMOS
+        </h1>
         <Carousel
           show={3}
           slide={1}
@@ -392,6 +401,7 @@ const Locations_mcD = ({ document }: any) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
