@@ -15,9 +15,6 @@ const Contact = (props: any) => {
             <a href="#">{phone}</a>
           </div>
         </div>
-        <div className="w-30">
-          <Cta buttonText="Order Online" url="#" style="primary-cta"></Cta>
-        </div>
       </div>
     </>
   );

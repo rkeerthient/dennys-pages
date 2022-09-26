@@ -10,9 +10,8 @@ const List = (props: List) => {
   const listItems = list.map((item) => <li key={item}>{item}</li>);
   return (
     <>
-      <div>
-        <div className="text-xl font-semibold mb-4">Services</div>
-        <ul className="list-disc pl-6 space-y-2">{listItems}</ul>
+      <div className="details">
+        <ul className="servicesList">{listItems}</ul>
       </div>
     </>
   );

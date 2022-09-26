@@ -27,6 +27,16 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import PageLayout from "../components/page-layout";
+import Locations_mcD from "../components/locations_mcD";
+import parsePhoneNumber from "libphonenumber-js";
+import { Carousel } from "@trendyol-js/react-carousel";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -48,6 +58,10 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "c_locationToMenu.name",
+      "c_locationToMenu.photoGallery",
+      "c_locationToMenu.price",
+      "pickupAndDeliveryServices",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -68,7 +82,11 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug ? document.slug : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.address1}-${document.id.toString()}`;
+  return document.slug
+    ? document.slug
+    : `${document.locale}/${document.address.region}/${document.address.city}/${
+        document.address.address1
+      }-${document.id.toString()}`;
 };
 
 /**
@@ -106,7 +124,33 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     ],
   };
 };
-
+const faqOptions = [
+  {
+    heading: "Does Denny’s offer delivery?",
+    content:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+  },
+  {
+    heading: "Where is The Burger Den located?",
+    content:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+  },
+  {
+    heading: "Is The Burger Den available in my area?",
+    content:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+  },
+  {
+    heading: "Where is The Meltdown located?",
+    content:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+  },
+  {
+    heading: "Is The Meltdown available in my area?",
+    content:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+  },
+];
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct stream document defined by `config`.
@@ -130,32 +174,42 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     geocodedCoordinate,
     services,
+    c_locationToMenu,
+    pickupAndDeliveryServices,
   } = document;
+  const phoneNumber = parsePhoneNumber(mainPhone);
 
   return (
     <>
-      <PageLayout _site={_site}>
-        <Banner name={name} address={address} openTime={openTime}>
-          <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta
-              buttonText="Get Directions"
-              url="http://google.com"
-              style="primary-cta"
-            />
-          </div>
-        </Banner>
-        <div className="centered-container">
+      {pickupAndDeliveryServices && pickupAndDeliveryServices.length >= 1 ? (
+        <PageLayout _site={_site}>
           <div className="section">
-            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-5 space-y-12">
-                <Contact address={address} phone={mainPhone}></Contact>
-                {services && <List list={services}></List>}
-              </div>
-              <div className="col-span-2 pt-5 space-y-10">
-                <div>
+            <div className="grid grid-cols-2  gap-1">
+              <div className="p-5 space-y-12">
+                <div className="flex gap-3 items-center justify-between	">
+                  <div className="nap">
+                    <h1>{name}</h1>
+                    {address.city}, {address.region} {address.postalCode} <br />
+                    <div>
+                      Get Directions &nbsp;|&nbsp;
+                      {phoneNumber && phoneNumber.formatNational()}
+                    </div>
+                  </div>
+
+                  <div className="w-30 mt-10">
+                    <Cta
+                      buttonText="Order Online"
+                      url="#"
+                      style="primary-cta"
+                    ></Cta>
+                  </div>
+                </div>
+
+                <div className="accordion-item">
                   {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
                 </div>
+              </div>
+              <div className=" pt-5 space-y-10">
                 {geocodedCoordinate && (
                   <StaticMap
                     latitude={geocodedCoordinate.latitude}
@@ -165,8 +219,124 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
           </div>
-        </div>
-      </PageLayout>
+          <div className="section p-4  bannerContent">
+            <h1>Delivery Services at {name}</h1>
+            <div
+              className="flex gap-3 mt-10"
+              style={{
+                height: "555px",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <div style={{ height: "500px", width: "500px" }}>
+                <img
+                  src="https://www.nrn.com/sites/nrn.com/files/Denny_s_BurgerDen-Logo-OnWhite.jpg"
+                  alt=""
+                  style={{
+                    width: "auto",
+                    height: "300px",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                />
+                <div className="mt-4">
+                  With a focus on high-quality ingredients and big, bold flavor
+                  combinations, The Burger Den is cookin’ up the classics you
+                  expect—and the crafty concoctions you don’t—and then
+                  partnering with your favorite delivery apps.
+                </div>
+                <div className="w-30 mt-10">
+                  <Cta
+                    buttonText="Order Online"
+                    url="#"
+                    style="primary-cta bannerCta"
+                  ></Cta>
+                </div>
+              </div>
+              <div style={{ height: "500px", width: "500px" }}>
+                <img
+                  src="https://www.nrn.com/sites/nrn.com/files/Denny_s_TheMeltdown-Logo-RGB.jpg"
+                  alt=""
+                  style={{
+                    width: "auto",
+                    height: "300px",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                />
+                <div className="mt-4">
+                  From a love of all things cheesy and the idea that mealtime
+                  should fit your mood, The Meltdown is the new go-to for
+                  handcrafted melts with fresh ingredients and a side of
+                  attitude.
+                </div>
+                <div className="w-30 mt-10">
+                  <Cta
+                    buttonText="Order Online"
+                    url="#"
+                    style="primary-cta bannerCta"
+                  ></Cta>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="section p-4 bannerContent space-y-12 mt-10"
+            style={{ marginTop: "2em !important" }}
+          >
+            <h1>Featured Menu</h1>
+            <Carousel
+              show={3.5}
+              slide={2}
+              swiping={true}
+              className="mt-10 mb-10"
+              useArrowKeys={true}
+            >
+              {c_locationToMenu.map((item: any, index: number) => {
+                return (
+                  <div key={index}>
+                    <div>
+                      <img src={item.photoGallery[0].image.url} alt="" />
+                    </div>
+                    <div className="name mt-4 text-xl">{item.name}</div>
+                    {item.price && <div className="price">{item.price}</div>}
+                    <div className="mt-10 mb-10">
+                      <Cta
+                        buttonText="Order Online"
+                        url="#"
+                        style="primary-cta bannerCta"
+                      ></Cta>
+                    </div>
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+          <div
+            className="section p-4 bannerContent"
+            style={{ marginTop: "2em !important" }}
+          >
+            <h1>General FAQs</h1>
+            <Accordion allowZeroExpanded>
+              {faqOptions.map((item, index: number) => (
+                <AccordionItem
+                  key={index}
+                  className="faqAccordion mt-4
+         mb-4"
+                >
+                  <AccordionItemHeading>
+                    <AccordionItemButton>{item.heading}</AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>{item.content}</AccordionItemPanel>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </PageLayout>
+      ) : (
+        <Locations_mcD document={document} />
+      )}
     </>
   );
 };

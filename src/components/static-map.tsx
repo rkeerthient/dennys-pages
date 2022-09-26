@@ -11,7 +11,7 @@ const StaticMap = (props: Coordinates) => {
   return (
     <>
       <img
-        className="w-full"
+        className="w-full mapImage"
         width="300"
         height="200"
         src={
