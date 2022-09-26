@@ -190,15 +190,15 @@ const Location: Template<TemplateRenderProps> = ({
               className="nav rounded-full"
             />
 
-            <ol className="c-bread-crumbs-list mt-10">
+            <ol className="c-bread-crumbs-list mt-10  rounded-full">
               <li>Locations</li>
-              <li>NY</li>
-              <li>Jackson Heights</li>
-              <li>8710 Northern Blvd</li>
+              <li>{address.region}</li>
+              <li>{address.city}</li>
+              <li>{name}</li>
             </ol>
             <div className="hero mt-10">
               <div className="hero-row">
-                <h1>Dinner at {name}</h1>
+                <h1>Delivery at {name}</h1>
               </div>
             </div>
             <div className="hero mt-10">

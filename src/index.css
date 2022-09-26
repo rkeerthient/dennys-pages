@@ -285,7 +285,7 @@ h6 {
   border-top-left-radius: 4.375rem;
   border-top-right-radius: 4.375rem;
   border-bottom-right-radius: 4.375rem;
-  padding-top: 8.125rem;
+  padding-top: 4em;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
@@ -300,6 +300,11 @@ h6 {
   background: white;
   width: fit-content;
   margin-left: 3em;
+  padding: 1em;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .hero {
@@ -367,4 +372,28 @@ h6 {
   width: 2rem;
   height: 1.5rem;
   content: url("https://locations.dennys.com/permanent-b0b701/assets/images/phone-red.d56e642b.svg");
+}
+.c-bread-crumbs-list li {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #ce3439;
+  text-decoration: underline;
+}
+.c-bread-crumbs-list li:last-child {
+  color: #000;
+  text-decoration: none;
+}
+.c-bread-crumbs-list li::after {
+  width: 1.4375rem;
+  height: 1.1875rem;
+  content: url("https://locations.dennys.com/permanent-b0b701/assets/images/angle-graybrown.9e715356.svg");
+}
+.c-bread-crumbs-list li:last-child:after {
+  width: 1.4375rem;
+  height: 1.1875rem;
+  content: "";
 }
