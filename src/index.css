@@ -352,3 +352,19 @@ h6 {
 .servicesList li:nth-child(1) {
   border-top: 0 solid #d8d8d8;
 }
+
+.napDetails h3 {
+  color: #0a857b !important;
+  text-transform: uppercase;
+}
+.phNo {
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.phNo::before {
+  width: 2rem;
+  height: 1.5rem;
+  content: url("https://locations.dennys.com/permanent-b0b701/assets/images/phone-red.d56e642b.svg");
+}

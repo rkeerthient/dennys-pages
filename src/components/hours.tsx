@@ -141,7 +141,12 @@ const Hours = (props: Hours) => {
 
   return (
     <>
-      <div className="text-xl font-semibold mb-4">{title}</div>
+      <div
+        className="text-xl font-semibold mt-4"
+        style={{ color: "#0a857b", textTransform: "uppercase" }}
+      >
+        {title}
+      </div>
       <table>
         <thead className="sr-only">
           <tr>

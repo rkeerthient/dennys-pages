@@ -182,34 +182,75 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       {pickupAndDeliveryServices && pickupAndDeliveryServices.length >= 1 ? (
-        <PageLayout _site={_site}>
-          <div className="section">
-            <div className="grid grid-cols-2  gap-1">
-              <div className="p-5 space-y-12">
-                <div className="flex gap-3 items-center justify-between	">
+        <>
+          <div className="headerStyle mt-4">
+            <img
+              src="/src/assets/images/header.png"
+              alt=""
+              className="nav rounded-full"
+            />
+
+            <ol className="c-bread-crumbs-list mt-10">
+              <li>Locations</li>
+              <li>NY</li>
+              <li>Jackson Heights</li>
+              <li>8710 Northern Blvd</li>
+            </ol>
+            <div className="hero mt-10">
+              <div className="hero-row">
+                <h1>Dinner at {name}</h1>
+              </div>
+            </div>
+            <div className="hero mt-10">
+              <div className="hero-row">
+                <div className="Hero-hoursToday">
+                  Closed - Opens at 7:00 AM Tuesday
+                </div>
+              </div>
+            </div>
+            <div className="hero mt-10">
+              <div className="flex gap-24	heroCtas">
+                <Cta
+                  buttonText="Get Directions"
+                  url="#"
+                  style="primary-cta bannerCta"
+                ></Cta>
+                <Cta
+                  buttonText="Order now"
+                  url="#"
+                  style="primary-cta bannerCta"
+                ></Cta>
+              </div>
+            </div>
+          </div>
+          <div className="centered-container">
+            <div className="appPromo flex space-between">
+              <div className="napDetails">
+                <div className="details">
                   <div className="nap">
-                    <h1>{name}</h1>
-                    {address.city}, {address.region} {address.postalCode} <br />
-                    <div>
-                      Get Directions &nbsp;|&nbsp;
+                    <h3>
+                      {name} <br />
+                      {address.city}, {address.region} {address.postalCode}
+                    </h3>
+                  </div>
+                  <div className="mt-4">
+                    <h3>Phone</h3>
+                    <div className="phNo">
                       {phoneNumber && phoneNumber.formatNational()}
                     </div>
                   </div>
-
-                  <div className="w-30 mt-10">
-                    <Cta
-                      buttonText="Order Online"
-                      url="#"
-                      style="primary-cta"
-                    ></Cta>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+                  {hours && <Hours title={"Hours"} hours={hours} />}
                 </div>
               </div>
-              <div className=" pt-5 space-y-10">
+              <div
+                className="appImage"
+                style={{
+                  minWidth: "700px",
+                  maxWidth: " 700px",
+                  zIndex: "1",
+                  borderRadius: "5%",
+                }}
+              >
                 {geocodedCoordinate && (
                   <StaticMap
                     latitude={geocodedCoordinate.latitude}
@@ -219,17 +260,26 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
           </div>
-          <div className="section p-4  bannerContent">
-            <h1>Delivery Services at {name}</h1>
+          <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
             <div
-              className="flex gap-3 mt-10"
+              style={{
+                borderBottomRightRadius: "5.9375rem",
+                height: "100%",
+                backgroundColor: "white !important",
+              }}
+            ></div>
+          </div>
+          <div className="section p-4  bannerContent">
+            <h1>Dinner Delivery Services at {name}</h1>
+            <div
+              className="flex gap-10 mt-10"
               style={{
                 height: "555px",
                 justifyContent: "center",
                 textAlign: "center",
               }}
             >
-              <div style={{ height: "500px", width: "500px" }}>
+              <div style={{ height: "300px", width: "300px" }}>
                 <img
                   src="https://www.nrn.com/sites/nrn.com/files/Denny_s_BurgerDen-Logo-OnWhite.jpg"
                   alt=""
@@ -254,7 +304,7 @@ const Location: Template<TemplateRenderProps> = ({
                   ></Cta>
                 </div>
               </div>
-              <div style={{ height: "500px", width: "500px" }}>
+              <div style={{ height: "300px", width: "300px" }}>
                 <img
                   src="https://www.nrn.com/sites/nrn.com/files/Denny_s_TheMeltdown-Logo-RGB.jpg"
                   alt=""
@@ -281,11 +331,79 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
           </div>
-          <div
-            className="section p-4 bannerContent space-y-12 mt-10"
-            style={{ marginTop: "2em !important" }}
-          >
-            <h1>Featured Menu</h1>
+          <div style={{ height: "5rem", backgroundColor: "#d0442b" }}>
+            <div
+              style={{
+                borderTopRightRadius: "5.9375rem",
+                height: "100%",
+                backgroundColor: "white !important",
+              }}
+            ></div>
+          </div>
+          <div className="centered-container">
+            <div className="appPromo flex space-between  mt-10">
+              <div
+                className="appImage"
+                style={{
+                  minWidth: "590px",
+                  maxWidth: " 590px",
+                  zIndex: "1",
+                }}
+              >
+                <img
+                  src="https://www.dennys.com/sites/default/files/styles/full_width_sm/public/2022-06/220310_Dennys_Curbside_Pickup_0221_v1.jpg?itok=ElM9DR9I"
+                  style={{
+                    borderRadius: "60px",
+                  }}
+                  alt=""
+                />
+              </div>
+              <div className="appDetails">
+                <div className="details">
+                  <span className="eyebrow">Download the</span>
+
+                  <h2>DENNY’S APP</h2>
+
+                  <div className="field-item field-item__body">
+                    <p>
+                      Tap into sweet deals and delicious perks with the new
+                      Denny’s App! Faster ordering, delivery driver tracking,
+                      built-in rewards and the ability to easily save your
+                      favorites is all at your fingertips.
+                    </p>
+                  </div>
+
+                  <div className="mt-10">
+                    <div className="badges flex gap-6">
+                      <a href="https://play.google.com/store/apps/details?id=com.dennys.mobile&amp;hl=en_US&amp;gl=US">
+                        <img
+                          alt="Google Play"
+                          src="	https://www.dennys.com/themes/custom/dennys/images/badge/google-play-store.svg"
+                        />
+                      </a>
+                      <a href="https://apps.apple.com/us/app/dennys/id527548554">
+                        <img
+                          alt="App Store"
+                          src="	https://www.dennys.com/themes/custom/dennys/images/badge/apple-app-store.svg"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
+            <div
+              style={{
+                borderBottomRightRadius: "5.9375rem",
+                height: "100%",
+                backgroundColor: "white !important",
+              }}
+            ></div>
+          </div>
+          <div className="section p-4 bannerContent space-y-12 mt-10">
+            <h1>Preferred Delivery Items</h1>
             <Carousel
               show={3.5}
               slide={2}
@@ -313,6 +431,15 @@ const Location: Template<TemplateRenderProps> = ({
               })}
             </Carousel>
           </div>
+          <div style={{ height: "5rem", backgroundColor: "#d0442b" }}>
+            <div
+              style={{
+                borderTopRightRadius: "5.9375rem",
+                height: "100%",
+                backgroundColor: "white !important",
+              }}
+            ></div>
+          </div>
           <div
             className="section p-4 bannerContent"
             style={{ marginTop: "2em !important" }}
@@ -333,7 +460,7 @@ const Location: Template<TemplateRenderProps> = ({
               ))}
             </Accordion>
           </div>
-        </PageLayout>
+        </>
       ) : (
         <Locations_mcD document={document} />
       )}

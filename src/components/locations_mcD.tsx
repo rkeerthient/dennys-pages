@@ -29,12 +29,12 @@ const faqOptions = [
       "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
   },
   {
-    heading: "Is there an Early-Bird-Specual?",
+    heading: "Is there an Early-Bird-Special?",
     content:
       "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
   },
   {
-    heading: "Can I use my AARP nenbership card for a discount?",
+    heading: "Can I use my AARP membership card for a discount?",
     content:
       "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
   },
@@ -112,7 +112,10 @@ const Locations_mcD = ({ document }: any) => {
                 </h3>
               </div>
               <div className="mt-4">
-                <h3>Phone</h3> {phoneNumber && phoneNumber.formatNational()}
+                <h3>Phone</h3>
+                <div className="phNo">
+                  {phoneNumber && phoneNumber.formatNational()}
+                </div>
               </div>
               {hours && <Hours title={"Hours"} hours={hours} />}
             </div>
@@ -146,7 +149,7 @@ const Locations_mcD = ({ document }: any) => {
         ></div>
       </div>
       <div className="section p-4 bannerContent space-y-12">
-        <h1>Featured Menu at {name}</h1>
+        <h1>Featured Dinner Menu at {name}</h1>
         <Carousel
           show={3.5}
           slide={2}
@@ -183,60 +186,6 @@ const Locations_mcD = ({ document }: any) => {
           }}
         ></div>
       </div>
-
-      {/* <div className="centered-container">
-        <div className="appPromo flex space-between">
-          <div
-            className="appImage"
-            style={{
-              minWidth: "590px",
-              maxWidth: " 590px",
-              zIndex: "1",
-            }}
-          >
-            <img
-              src="https://www.dennys.com/sites/default/files/styles/full_width_sm/public/2022-06/220310_Dennys_Curbside_Pickup_0221_v1.jpg?itok=ElM9DR9I"
-              style={{
-                borderRadius: "60px",
-              }}
-              alt=""
-            />
-          </div>
-          <div className="appDetails">
-            <div className="details">
-              <span className="eyebrow">Download the</span>
-
-              <h2>DENNY’S APP</h2>
-
-              <div className="field-item field-item__body">
-                <p>
-                  Tap into sweet deals and delicious perks with the new Denny’s
-                  App! Faster ordering, delivery driver tracking, built-in
-                  rewards and the ability to easily save your favorites is all
-                  at your fingertips.
-                </p>
-              </div>
-
-              <div className="mt-10">
-                <div className="badges flex gap-6">
-                  <a href="https://play.google.com/store/apps/details?id=com.dennys.mobile&amp;hl=en_US&amp;gl=US">
-                    <img
-                      alt="Google Play"
-                      src="	https://www.dennys.com/themes/custom/dennys/images/badge/google-play-store.svg"
-                    />
-                  </a>
-                  <a href="https://apps.apple.com/us/app/dennys/id527548554">
-                    <img
-                      alt="App Store"
-                      src="	https://www.dennys.com/themes/custom/dennys/images/badge/apple-app-store.svg"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <div
         style={{ height: "5rem", backgroundColor: "#f36c13" }}
