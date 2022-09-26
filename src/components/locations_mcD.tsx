@@ -90,7 +90,7 @@ const Locations_mcD = ({ document }: any) => {
     <>
       <div className="headerStyle mt-4">
         <img
-          src="/src/assets/images/header.png"
+          src="https://i.imgur.com/o2nmX4V.png"
           alt=""
           className="nav rounded-full"
         />

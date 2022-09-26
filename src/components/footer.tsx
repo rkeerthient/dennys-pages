@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="">
       <div className="flex flex-col flex-wrap justify-center md:flex-row">
-        <img src="/src/assets/images/footer.png" alt="" />
+        <img src="https://i.imgur.com/zozRKQL.png" alt="" />
       </div>
     </footer>
   );
