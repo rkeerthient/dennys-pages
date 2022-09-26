@@ -44,6 +44,33 @@ const faqOptions = [
       "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
   },
 ];
+
+const promoOptions = [
+  {
+    img: "https://dynl.mktgcdn.com/p/bF2py3s5PrPj0Jpu5it_3hsnURE6YTtXoUyxCRNK72c/358x202.jpg",
+    name: `Denny's Rewards`,
+    text: "Join today and receive the latest news, offers and exclusive promotions. Receive 20% off your next visit when you sign up.",
+    cta: "Join Rewards",
+  },
+  {
+    img: "https://dynl.mktgcdn.com/p/sI2h1xrZ3ZgaVgyOf47YsjEcvILrD8vBOWbTvG_UB4Y/600x338.jpg",
+    name: `Birthday Treat`,
+    text: "Sign up for Denny's Rewards to receive an exclusive birthday offer.",
+    cta: "Join Rewards",
+  },
+  {
+    img: "https://dynl.mktgcdn.com/p/tpQpjJaRnau-NXq9ggWczeGAKrd4cEz-qR7oMwibNwY/600x338.jpg",
+    name: `Kids Eat Free`,
+    text: "Kids Eat Free days and restaurant participation may vary by location. Restrictions may apply.",
+    cta: "View Kids Menu",
+  },
+  {
+    img: "https://dynl.mktgcdn.com/p/CWRDUDYkPTeL8TaYm4bd520ujNofI24kBhfegFbmoAg/600x401.jpg",
+    name: `DINER DRIP`,
+    text: "Like taking our unique style from the kitchen to your closet with the launch of our online merch store with swag you can’t get anywhere else. All inspired by America’s diner.​",
+    cta: "Learn more",
+  },
+];
 const Locations_mcD = ({ document }: any) => {
   const {
     _site,
@@ -186,16 +213,81 @@ const Locations_mcD = ({ document }: any) => {
           }}
         ></div>
       </div>
-
       <div
-        style={{ height: "5rem", backgroundColor: "#f36c13" }}
-        className="mt-10"
+        className="section p-4 space-y-12 promos"
+        style={{ background: "#f5f3eb", marginBottom: "0px !important" }}
       >
+        <h1>PROMOS</h1>
+        <Carousel
+          show={3}
+          slide={1}
+          swiping={true}
+          className="mt-10 mb-10 promoCar"
+          useArrowKeys={true}
+        >
+          {promoOptions.map((item: any, index: number) => {
+            return (
+              <div
+                key={index}
+                style={{
+                  maxWidth: "350px",
+                  alignContent: "center",
+                }}
+              >
+                <div
+                  className="Product-imgWrapper"
+                  style={{
+                    marginBottom: "1rem",
+                    textAlign: "center",
+                    width: "100%",
+                    paddingLeft: "1rem",
+                    paddingRight: "1rem",
+                  }}
+                >
+                  <img
+                    src={item.img}
+                    alt=""
+                    style={{
+                      width: "600px",
+                      boxShadow: " 0 0 1.25rem -0.625rem rgb(0 0 0 / 60%)",
+                      borderRadius: "2.5rem",
+                    }}
+                  />
+                </div>
+                <div className="Product-info">
+                  <div
+                    className="name mt-4 text-xl"
+                    style={{
+                      textTransform: "capitalize",
+                      minHeight: "3rem",
+                      color: "#47433f",
+                    }}
+                  >
+                    {item.name}
+                  </div>
+                  <div className="price" style={{ color: "#47433f" }}>
+                    {item.text}
+                  </div>
+                </div>
+
+                <div className="mt-10 mb-10">
+                  <Cta
+                    buttonText={item.cta}
+                    url="#"
+                    style="primary-cta bannerCta"
+                  ></Cta>
+                </div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
+      <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
         <div
           style={{
             borderBottomRightRadius: "5.9375rem",
             height: "100%",
-            backgroundColor: "white !important",
+            backgroundColor: "#f5f3eb !important",
           }}
         ></div>
       </div>

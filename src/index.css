@@ -397,3 +397,47 @@ h6 {
   height: 1.1875rem;
   content: "";
 }
+
+.promoCar {
+  text-align: center;
+}
+
+.Product-info {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.promos button[data-direction="right"] {
+  margin-right: 1em;
+  margin-top: 100px;
+  border: solid #e65d1d;
+  border-width: 0 3px 3px 0;
+  display: block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+button[data-direction="left"] {
+  margin-right: 1em;
+  margin-top: 100px;
+  border: solid #e65d1d;
+  border-width: 0 3px 3px 0;
+  display: block;
+  padding: 3px;
+  transform: rotate(140deg);
+  -webkit-transform: rotate(140deg);
+}
+
+.promos .primary-cta {
+  border: 1px solid #e65d1d !important;
+}
