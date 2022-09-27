@@ -140,15 +140,6 @@ h6 {
 .accordion__button[aria-selected="true"]::before {
   content: "\2014";
 }
-/* 
-.accordion-item table tr {
-  width: 100%;
-  border-top: 1px dotted #cecece;
-  border-bottom: 1px dotted #cecece;
-}
-.accordion-item table tr td:nth-child(2) {
-  float: right;
-} */
 
 .bannerContent {
   background: linear-gradient(180deg, #f36c13, #d0442b);
@@ -440,4 +431,21 @@ button[data-direction="left"] {
 
 .promos .primary-cta {
   border: 1px solid #e65d1d !important;
+}
+
+.storeOpen::before {
+  background-color: #00c413;
+  content: "";
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+.storeClosed::before {
+  background-color: #e65d1d;
+  content: "";
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
 }

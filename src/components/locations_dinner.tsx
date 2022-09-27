@@ -8,15 +8,13 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import Contact from "./contact";
 import Cta from "./cta";
 import Hours from "./hours";
-import hours from "./hours";
 import List from "./list";
 import StaticMap from "./static-map";
 import parsePhoneNumber from "libphonenumber-js";
-import Banner from "./banner";
 import Footer from "./footer";
+import HoursBanner from "./hoursBanner";
 
 const faqOptions = [
   {
@@ -72,7 +70,7 @@ const promoOptions = [
     cta: "Learn more",
   },
 ];
-const Locations_mcD = ({ document }: any) => {
+const Locations_Dinner = ({ document }: any) => {
   const {
     _site,
     name,
@@ -83,6 +81,7 @@ const Locations_mcD = ({ document }: any) => {
     geocodedCoordinate,
     services,
     c_locationToMenu,
+    timezone,
   } = document;
   const [isActive, setIsActive] = useState(false);
   const phoneNumber = parsePhoneNumber(mainPhone);
@@ -107,13 +106,7 @@ const Locations_mcD = ({ document }: any) => {
             <h1>Dinner at {name}</h1>
           </div>
         </div>
-        <div className="hero mt-10">
-          <div className="hero-row">
-            <div className="Hero-hoursToday">
-              Closed - Opens at 7:00 AM Tuesday
-            </div>
-          </div>
-        </div>
+        <HoursBanner document={document} />
         <div className="hero mt-10">
           <div className="flex gap-24	heroCtas">
             <Cta
@@ -406,4 +399,4 @@ const Locations_mcD = ({ document }: any) => {
   );
 };
 
-export default Locations_mcD;
+export default Locations_Dinner;
