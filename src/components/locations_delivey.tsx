@@ -131,16 +131,176 @@ const Locations_Delivery = ({ document }: any) => {
           </div>
         </div>
       </div>
-      <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
+      <div style={{ height: "5rem", backgroundColor: "#f16a14" }}>
         <div
           style={{
-            borderBottomRightRadius: "5.9375rem",
+            borderTopRightRadius: "5.9375rem",
             height: "100%",
-            backgroundColor: "white !important",
+            justifyContent: "center",
+            textAlign: "center",
+            lineHeight: " 2.5",
+            color: "white !important",
           }}
-        ></div>
+        >
+          <h1 style={{ color: "white !important" }}>
+            Delivery Services at {name}
+          </h1>
+        </div>
       </div>
-      <div className="section p-4  bannerContent">
+      {/* Right image */}
+      <div className="centered-container">
+        <div className="appPromo flex space-between  mt-10">
+          <div
+            className="appImage  "
+            style={{
+              minWidth: "590px",
+              maxWidth: " 590px",
+              zIndex: "1",
+              height: "600px",
+            }}
+          >
+            <img
+              className="border"
+              src="https://www.nrn.com/sites/nrn.com/files/Denny_s_BurgerDen-Logo-OnWhite.jpg"
+              style={{
+                borderRadius: "60px",
+                height: "100%",
+                padding: "3em",
+                background: "white",
+              }}
+              alt=""
+            />
+          </div>
+          <div
+            className="appDetails"
+            style={{
+              background: "#262628",
+              padding: " 2em",
+              height: "fit-content",
+              marginTop: "auto",
+              marginBottom: "auto",
+            }}
+          >
+            <div
+              className="details"
+              style={{ marginLeft: "51px", padding: "0px" }}
+            >
+              <div
+                className="field-item field-item__body"
+                style={{ color: "white" }}
+              >
+                <p>
+                  With a focus on high-quality ingredients and big, bold flavor
+                  combinations, The Burger Den is cookin’ up the classics you
+                  expect—and the crafty concoctions you don’t—and then
+                  partnering with your favorite delivery apps, so you never have
+                  to leave your couch. And since it’s brought to you by Denny’s,
+                  the people who invented America’s diner (and stay up as late
+                  as you do), you know you’re gonna find the tastes you want
+                  when you want it.
+                </p>
+                <p className="mt-4">
+                  Our piled-high burgers and hand-dipped premium milk shakes are
+                  available all day and all night through DoorDash, Uber Eats or
+                  Postmates. Get your favorite food your favorite way:
+                  Delivered.
+                </p>
+              </div>
+
+              <div className="mt-10">
+                <div
+                  className="badges flex gap-6"
+                  style={{ justifyContent: "space-between" }}
+                >
+                  <img
+                    alt="Google Play"
+                    src="	https://theburgerden.com/wp-content/uploads/2021/01/dd.png"
+                  />
+                  <img
+                    alt="App Store"
+                    src="https://theburgerden.com/wp-content/uploads/2021/01/UberEats.png"
+                  />
+                  <img
+                    alt="App Store"
+                    src="https://theburgerden.com/wp-content/uploads/2021/01/PM.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>{" "}
+      {/* Left image */}
+      <div className="section centered-container">
+        <div className="appPromo flex space-between">
+          <div
+            className="napDetails"
+            style={{
+              background: "#626262",
+              padding: " 2em",
+              height: "fit-content",
+              marginTop: "auto",
+              marginBottom: "auto",
+              marginLeft: "0px !important",
+            }}
+          >
+            <div className="details">
+              <div className="nap" style={{ width: "83%", color: "white" }}>
+                <p>
+                  From a love of all things cheesy and the idea that mealtime
+                  should fit your mood, The Meltdown is the new go-to for
+                  handcrafted melts with fresh ingredients and a side of
+                  attitude. With flavor combinations you didn’t see coming,
+                  we’ve got you covered for breakfast, lunch, dinner or any
+                  snack time in between. And did we mention it’s brought to you
+                  by Denny’s, the people who invented America’s Diner (excuse
+                  the humble brag)? So sit back, order through our exclusive
+                  delivery partner, DoorDash and go ahead…have a meltdown….you
+                  earned it.
+                </p>
+                <p className="mt-4">
+                  With DoorDash as our exclusive delivery partner, you can get
+                  the handcrafted melts you want, when and where you want them.
+                  Sound good? We thought so too.
+                </p>
+              </div>
+              <div className="mt-10">
+                <div
+                  className="badges flex gap-6"
+                  style={{ justifyContent: "space-between" }}
+                >
+                  <img
+                    alt="Google Play"
+                    src="	https://theburgerden.com/wp-content/uploads/2021/01/dd.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="appImage  "
+            style={{
+              minWidth: "590px",
+              maxWidth: "590px",
+              zIndex: "1",
+              height: "600px",
+            }}
+          >
+            <img
+              src="https://www.nrn.com/sites/nrn.com/files/Denny_s_TheMeltdown-Logo-RGB.jpg"
+              alt=""
+              className="border"
+              style={{
+                borderRadius: "60px",
+                height: "100%",
+                padding: "3em",
+                background: "white",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      {/* <div className="section p-4  bannerContent">
         <h1>Dinner Delivery Services at {name}</h1>
         <div
           className="flex gap-10 mt-10"
@@ -159,6 +319,7 @@ const Locations_Delivery = ({ document }: any) => {
                 height: "300px",
                 marginLeft: "auto",
                 marginRight: "auto",
+                borderRadius: "50%",
               }}
             />
             <div className="mt-4">
@@ -184,6 +345,7 @@ const Locations_Delivery = ({ document }: any) => {
                 height: "300px",
                 marginLeft: "auto",
                 marginRight: "auto",
+                borderRadius: "50%",
               }}
             />
             <div className="mt-4">
@@ -200,6 +362,44 @@ const Locations_Delivery = ({ document }: any) => {
             </div>
           </div>
         </div>
+      </div> */}
+      <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
+        <div
+          style={{
+            borderBottomRightRadius: "5.9375rem",
+            height: "100%",
+            backgroundColor: "white !important",
+          }}
+        ></div>
+      </div>
+      <div className="section p-4 bannerContent space-y-12 mt-10">
+        <h1>Preferred Delivery Items</h1>
+        <Carousel
+          show={3.5}
+          slide={2}
+          swiping={true}
+          className="mt-10 mb-10"
+          useArrowKeys={true}
+        >
+          {c_locationToMenu.map((item: any, index: number) => {
+            return (
+              <div key={index}>
+                <div>
+                  <img src={item.photoGallery[0].image.url} alt="" />
+                </div>
+                <div className="name mt-4 text-xl">{item.name}</div>
+                {item.price && <div className="price">{item.price}</div>}
+                <div className="mt-10 mb-10">
+                  <Cta
+                    buttonText="Order Online"
+                    url="#"
+                    style="primary-cta bannerCta"
+                  ></Cta>
+                </div>
+              </div>
+            );
+          })}
+        </Carousel>
       </div>
       <div style={{ height: "5rem", backgroundColor: "#d0442b" }}>
         <div
@@ -272,48 +472,7 @@ const Locations_Delivery = ({ document }: any) => {
           }}
         ></div>
       </div>
-      <div className="section p-4 bannerContent space-y-12 mt-10">
-        <h1>Preferred Delivery Items</h1>
-        <Carousel
-          show={3.5}
-          slide={2}
-          swiping={true}
-          className="mt-10 mb-10"
-          useArrowKeys={true}
-        >
-          {c_locationToMenu.map((item: any, index: number) => {
-            return (
-              <div key={index}>
-                <div>
-                  <img src={item.photoGallery[0].image.url} alt="" />
-                </div>
-                <div className="name mt-4 text-xl">{item.name}</div>
-                {item.price && <div className="price">{item.price}</div>}
-                <div className="mt-10 mb-10">
-                  <Cta
-                    buttonText="Order Online"
-                    url="#"
-                    style="primary-cta bannerCta"
-                  ></Cta>
-                </div>
-              </div>
-            );
-          })}
-        </Carousel>
-      </div>
-      <div style={{ height: "5rem", backgroundColor: "#d0442b" }}>
-        <div
-          style={{
-            borderTopRightRadius: "5.9375rem",
-            height: "100%",
-            backgroundColor: "white !important",
-          }}
-        ></div>
-      </div>
-      <div
-        className="section p-4 bannerContent"
-        style={{ marginTop: "2em !important" }}
-      >
+      <div className="section p-4 bannerContent">
         <h1>General FAQs</h1>
         <Accordion allowZeroExpanded>
           {faqOptions.map((item, index: number) => (
@@ -329,6 +488,15 @@ const Locations_Delivery = ({ document }: any) => {
             </AccordionItem>
           ))}
         </Accordion>
+      </div>
+      <div style={{ height: "5rem", backgroundColor: "#d0442b" }}>
+        <div
+          style={{
+            borderTopRightRadius: "5.9375rem",
+            height: "100%",
+            backgroundColor: "white !important",
+          }}
+        ></div>
       </div>
       <Footer />
     </>
