@@ -449,3 +449,18 @@ button[data-direction="left"] {
   height: 0.5rem;
   border-radius: 50%;
 }
+
+.Hero-curve {
+  height: 2.5rem;
+  background: url("https://locations.dennys.com/permanent-b0b701/assets/images/tiled_red_background.6a3fcd01.png");
+  background-size: cover;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.Hero-curveInner {
+  border-top-left-radius: 5.625rem;
+  background-color: #f5f3eb;
+  height: 100%;
+  width: 100%;
+}

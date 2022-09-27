@@ -122,6 +122,9 @@ const Locations_Dinner = ({ document }: any) => {
           </div>
         </div>
       </div>
+      <div className="Hero-curve">
+        <div className="Hero-curveInner"></div>
+      </div>
       <div className="centered-container">
         <div className="appPromo flex space-between">
           <div className="napDetails">
@@ -159,7 +162,6 @@ const Locations_Dinner = ({ document }: any) => {
           </div>
         </div>
       </div>
-
       <div style={{ height: "5rem", backgroundColor: "#f36c13" }}>
         <div
           style={{

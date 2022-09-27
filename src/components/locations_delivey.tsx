@@ -94,6 +94,9 @@ const Locations_Delivery = ({ document }: any) => {
           </div>
         </div>
       </div>
+      <div className="Hero-curve">
+        <div className="Hero-curveInner"></div>
+      </div>
       <div className="centered-container">
         <div className="appPromo flex space-between">
           <div className="napDetails">
