@@ -2,10 +2,13 @@ import * as React from "react";
 
 const HoursBanner = ({ document }: any) => {
   const { hours, timezone } = document;
-  console.log(JSON.stringify(timezone));
-  console.log(JSON.stringify(hours));
 
   const getStatus = (currentDay: any, currentTime: any, hours: any) => {
+    if (hours[currentDay.toLowerCase()].isClosed)
+      return {
+        status: "Closed perm",
+        text: `Closed`,
+      };
     var startTime =
       (hours[currentDay.toLowerCase()].openIntervals[0].start.split(":")[0] ===
       "00"
@@ -49,8 +52,6 @@ const HoursBanner = ({ document }: any) => {
     return date.toLocaleString("en-us", { weekday: "long" });
   };
   const closeOrOpenTime = (inpTime: any) => {
-    console.log(inpTime);
-
     let newTime = inpTime;
     if (inpTime.split(":")[0] === "00")
       newTime = `${newTime.split(":")[0].replace(/(.*)/, "24")}:${
@@ -98,9 +99,11 @@ const HoursBanner = ({ document }: any) => {
               ? "Open Now - "
               : res.status === "Closed"
               ? "Closed  - "
+              : res.status === "Closed perm"
+              ? "Closed"
               : ""}
           </p>
-          {res.text}
+          {res.status !== "Closed perm" && res.text}
         </div>
       </div>
     </div>
