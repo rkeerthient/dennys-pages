@@ -127,7 +127,7 @@ h6 {
 .accordion__panel {
   font-weight: normal !important;
 }
-/* .accordion__button:before {
+.accordion__button:before {
   content: "+";
   float: right;
   margin-right: 1em;
@@ -140,7 +140,7 @@ h6 {
 .accordion__button[aria-selected="true"]::before {
   content: "\2014";
 }
-
+/* 
 .accordion-item table tr {
   width: 100%;
   border-top: 1px dotted #cecece;
