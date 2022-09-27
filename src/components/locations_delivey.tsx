@@ -78,7 +78,7 @@ const Locations_Delivery = ({ document }: any) => {
             <h1>Delivery at {name}</h1>
           </div>
         </div>
-        <HoursBanner document={document} />
+        {hours && <HoursBanner document={document} />}
         <div className="hero mt-10">
           <div className="flex gap-24	heroCtas">
             <Cta
