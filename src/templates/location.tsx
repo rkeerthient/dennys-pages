@@ -56,7 +56,7 @@ export const config: TemplateConfig = {
       "name",
       "address",
       "mainPhone",
-      "description",
+      "description","c_dinnerDescription",
       "hours",
       "slug",
       "geocodedCoordinate",
@@ -150,7 +150,7 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     c_locationToMenu,
     pickupAndDeliveryServices,
-    timezone,
+    timezone,c_dinnerDescription
   } = document;
 
   return (

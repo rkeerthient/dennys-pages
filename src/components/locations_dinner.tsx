@@ -81,7 +81,7 @@ const Locations_Dinner = ({ document }: any) => {
     geocodedCoordinate,
     services,
     c_locationToMenu,
-    timezone,
+    timezone, c_dinnerDescription
   } = document;
   const [isActive, setIsActive] = useState(false);
   const phoneNumber = parsePhoneNumber(mainPhone);
