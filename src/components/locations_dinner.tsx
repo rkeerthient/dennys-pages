@@ -341,32 +341,7 @@ const Locations_Dinner = ({ document }: any) => {
             <div className="About-description">
               <div className="c-description">
                 <div style={{ color: "#47433f" }}>
-                  Denny's is the place that is always open for you to be who you
-                  want, with the people you want, over the food you
-                  want…whenever you want. We celebrate the inherent creativity
-                  of our food and the uniqueness of all people. So, come as you
-                  are. Enjoy pancakes for dinner or burgers for breakfast. You
-                  are always welcome at America’s Diner, where we are Open for
-                  Anything™. <br />
-                  <br />
-                  It’s the place where people can relax and be themselves while
-                  enjoying classic American comfort food and everyday value.
-                  Whether it's appetizers, breakfast, lunch or dinner, we pride
-                  ourselves in serving our guests the diner food they love
-                  including favorites like Moons Over My Hammy®, Sizzlin’
-                  Skillets, hand-dipped Milk Shakes, 100% Beef Burgers and the
-                  world-famous Build Your Own Grand Slam®, OR dishes from our 24
-                  favorite social stars, like the New! So Pumped-Kin Pancakes™
-                  or the New! Mo’ Mozzarella Burger™. Dine in or bring the diner
-                  home to feed the fam by ordering online through Dennys.com or
-                  our Mobile App.
-                  <br /> <br />
-                  Denny’s prides itself in offering delicious food at a price
-                  you can afford. We’re taking it one step further and making a
-                  whole new menu for it! Introducing Denny’s All Day Diner Deals
-                  menu with 10 deal-icious meals like the Everday Value Slam®,
-                  starting at only $5.99. That’s value you can enjoy. All day.
-                  Every day.
+                {c_dinnerDescription}
                 </div>
               </div>
             </div>
