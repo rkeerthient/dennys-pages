@@ -345,15 +345,7 @@ const Locations_Dinner = ({ document }: any) => {
                 </div>
               </div>
             </div>
-            <div className="About-buttonWrapper">
-              <a
-                className="About-button"
-                href="https://www.dennys.com"
-                data-ya-track="link"
-              >
-                dennys.com
-              </a>
-            </div>
+            
           </div>
           <div>
             <h2
